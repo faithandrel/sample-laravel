@@ -115,3 +115,17 @@ class NewMessage extends Notification implements FCMNotificationInterface
 
     }
 }
+
+/**
+ * As you can see this extends Laravel's Notification class 
+ * (Illuminate\Notifications\Notification)
+ * 
+ * Also it implements an interface - FCMNotificationInterface
+ * See - Services/Notifications/FCMNotificationInterface.php
+ * 
+ * This is to ensure that all notifications that will be pushed to mobile 
+ * will implement the functions to prepare data for Firebase  
+ * See also Services/Notifications/ChatRequest.php
+ * 
+ * Next, please see Services/Notifications/FCMNotifier.php
+ */

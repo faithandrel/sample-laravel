@@ -5,7 +5,6 @@ namespace App\Models;
 use DB;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Notifications\NewMatch;
 use App\Notifications\NewMessage;
 use App\Services\Notifications\Notifiable;
 use App\Services\Notifications\FCMNotifier;
@@ -70,3 +69,13 @@ class User extends Authenticatable
         return $this->morphMany(Location::class, 'locationable');
     }
 }
+
+/**
+ * As we can see here the User uses the Notifications feature of Laravel.
+ * FCMNotifier is a service that sends push notifications to mobile.
+ * It is prefixed FCM because it uses Firebase.
+ * NewMessage is one of the notification class that we use.
+ * 
+ * Next, please see the NewMessage notification - app/Notifications/NewMessage.php
+ */
+ 

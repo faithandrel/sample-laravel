@@ -23,8 +23,6 @@ class AccessController extends Controller
 
 	public function login(Request $request) 
 	{
-		//TODO: check access token for better security
-
 	    if (empty($request->facebook)) {
 	        return response()->json(['message' => 'facebook unavailable'], 
 	                                HttpResponse::HTTP_UNPROCESSABLE_ENTITY);
@@ -105,3 +103,13 @@ class AccessController extends Controller
         return response()->json([]);
     }
 }
+
+/**
+ * The app uses facebook login for login/signup. 
+ * In the login function if the user's facebook id is not found we create a new user. 
+ * Otherwise, it proceeds to logging the user in and sending a JWT token 
+ * for the mobile app.
+ * This allows for a seamless signup process for users
+ * 
+ * Next, please see the User Model - app/Models/User.php
+ */

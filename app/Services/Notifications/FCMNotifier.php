@@ -70,3 +70,16 @@ class FCMNotifier {
 	}
 
 }
+
+/**
+ * This is the service class for sending the push notifications.
+ * notifyUser sends the latest unread notification to the user.
+ * notifyUsers checks all the users with unread notifications and pushes them to mobile.
+ * It also checks when the user was last notified and active to 
+ * avoid spamming them with notifications.
+ * 
+ * This function is run on schedule in app/Console/Kernel.php. 
+ * (Laravel's task scheduling feature) 
+ * 
+ * END
+ * /
